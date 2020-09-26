@@ -1,0 +1,6 @@
+<?php
+    $settingsManager = Jcc\Sidenav\Classes\SideNavManager::instance();
+    $mainMenuCode = BackendMenu::instance()->getContext()->mainMenuCode;
+    $systemItems = $settingsManager->listItems($mainMenuCode);
+?>
+<?= $this->makePartial('~/plugins/jcc/sidenav/partials/_settings_menu_items.htm', ['items' => $systemItems]); ?>
